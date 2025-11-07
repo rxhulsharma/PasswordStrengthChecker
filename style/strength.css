@@ -285,4 +285,34 @@ h1 {
     height: 180px !important;
   }
 }
+/* ✅ Fix meter + tips collision on mobile */
+@media (max-width: 900px) {
+
+  .right-panel {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .meter-area {
+    margin-bottom: 1rem;
+  }
+
+  #strengthMeter {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .tips-card {
+    margin-top: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  .meter-area {
+    background: radial-gradient(circle, rgba(77,166,255,0.05), transparent);
+  }
+}
+
 
