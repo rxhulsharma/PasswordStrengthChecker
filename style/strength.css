@@ -3,7 +3,7 @@ body {
   background: linear-gradient(135deg, #000814, #001d3d);
   color: #dce5f7;
   font-family: 'Poppins', sans-serif;
-  padding-top: 5rem;
+  padding-top: 6rem;
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -11,7 +11,7 @@ body {
 /* --- Main Layout --- */
 .app-container {
   width: 90%;
-  margin: 3rem auto;
+  margin: 3.5rem auto;
   display: flex;
   justify-content: space-between;
   gap: 2rem;
@@ -23,29 +23,19 @@ body {
   backdrop-filter: blur(25px);
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-  padding: 2.5rem;
+  padding: 2rem;
   color: #dce5f7;
 }
 
-.left-panel {
-  flex: 1.8;
-}
+.left-panel { flex: 1.8; }
+.right-panel { flex: 1; text-align: center; }
 
-.right-panel {
-  flex: 1;
-  text-align: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* --- Titles --- */
+/* --- Title --- */
 h1 {
   font-size: 2rem;
-  color: #ffffff;
-  margin-bottom: 1.2rem;
   font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #fff;
 }
 
 /* --- Password Input --- */
@@ -64,235 +54,137 @@ h1 {
   font-size: 1rem;
 }
 
-.password-input input:focus {
-  outline: none;
-  border-color: #4da6ff;
-  box-shadow: 0 0 8px #4da6ff55;
-}
-
 .password-input button {
   position: absolute;
-  right: 12px;
+  right: 13px;
   top: 10px;
+  font-size: 1.3rem;
+  color: #4da6ff;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.3rem;
-  color: #4da6ff;
 }
 
 /* --- Proceed Button --- */
 .proceed-btn {
-  background: linear-gradient(90deg, #007bff, #00b4ff);
-  border: none;
-  color: white;
-  padding: 0.9rem;
-  font-size: 1rem;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 1.2rem;
   width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(90deg, #007bff, #00b4ff);
+  color: #fff;
+  margin-top: 1.2rem;
   transition: 0.25s;
-  box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
 }
 
 .proceed-btn:hover {
-  background: linear-gradient(90deg, #0056b3, #008cff);
-  box-shadow: 0 0 25px rgba(0, 140, 255, 0.6);
   transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 140, 255, 0.5);
 }
 
-/* --- Password Strength Text --- */
+/* ---- Strength Text ---- */
 #strengthText {
-  margin-top: 0.5rem;
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #9ecbff;
+  margin-top: 0.4rem;
+  font-weight: 600;
 }
 
 /* --- Cards --- */
 .card, .tips-card, .generator-card {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
   border-radius: 15px;
-  padding: 1.2rem;
-  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.03);
+  padding: 1.15rem;
   margin-top: 1.2rem;
 }
 
-/* --- Password Policy --- */
+/* ---- Password Policy ---- */
 .policy-card ul li {
   list-style: none;
   margin: 8px 0;
-  font-weight: 500;
+  font-size: 1rem;
 }
 
-/* --- Meter --- */
+/* ---- Meter ---- */
 .meter-area {
-  width: 360px;
-  height: 360px;
+  width: 340px;
+  height: 340px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 1rem auto;
-  background: radial-gradient(circle at center, rgba(77,166,255,0.08), transparent);
+  align-items: center;
+  margin: 1.2rem auto;
   border-radius: 50%;
+  background: radial-gradient(circle, rgba(77,166,255,0.12), transparent);
 }
 
-/* --- Tips --- */
-.tips-card {
-  border-left: 6px solid #4da6ff;
-  color: #dbe9ff;
-  text-align: left;
-  margin-bottom: 4rem;
-
+/* --- Side-by-side breach + entropy --- */
+.row-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.3rem;
+  margin-top: 2rem;
 }
+.breach-card, .entropy-card { flex: 1; }
 
 /* --- Generator --- */
 .generator-controls {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 0.8rem;
+  gap: 0.7rem;
   margin-top: 0.8rem;
 }
 
 .generator-controls input {
   width: 60%;
-  text-align: center;
   padding: 0.6rem;
-  border: 1px solid rgba(77, 166, 255, 0.3);
-  border-radius: 8px;
-  font-size: 1.05rem;
-  background: rgba(255, 255, 255, 0.08);
   color: #fff;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(77,166,255,0.3);
+  border-radius: 10px;
+  text-align: center;
 }
 
 .generator-controls button {
+  padding: 0.6rem 1.1rem;
+  font-size: 1rem;
   background: #4da6ff;
-  border: none;
-  color: #fff;
-  padding: 0.6rem 1.2rem;
+  color: white;
   border-radius: 10px;
+  border: none;
   cursor: pointer;
-  transition: 0.25s;
-  font-size: 1.05rem;
+  transition: 0.2s;
 }
-
 .generator-controls button:hover {
   background: #007bff;
-  box-shadow: 0 0 15px rgba(0, 140, 255, 0.4);
 }
 
-/* --- Responsive --- */
-@media (max-width: 1100px) {
+/* ✅ MOBILE FIX */
+@media (max-width: 920px) {
   .app-container {
     flex-direction: column;
-    height: auto;
-    overflow: auto;
+    width: 94%;
   }
-  .left-panel, .right-panel {
-    width: 100%;
-    height: auto;
+
+  h1 {
+    text-align: center;
+    font-size: 1.6rem;
   }
+
   .meter-area {
-    margin: 1rem 0;
-  }
-}
-/* Make the lower two cards side-by-side */
-.row-cards {
-  display: flex;
-  justify-content: space-between;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-/* Ensure both cards take equal width */
-.breach-card, .entropy-card {
-  flex: 1;
-}
-/* ✅ MOBILE LAYOUT FOR CHECKER PAGE */
-@media (max-width: 900px) {
-  .app-container {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 1rem 1rem 3rem;
-  }
-
-  .left-panel, .right-panel {
-    width: 100%;
-    margin: 0;
-  }
-
-  .tips-card, .generator-card, .breach-card, .entropy-card, .policy-card {
-    padding: 1rem 1rem;
-    font-size: 0.95rem;
+    width: 250px;
+    height: 250px;
   }
 
   .password-input input {
     font-size: 0.95rem;
   }
 
-  #strengthMeter {
-    width: 240px !important;
-    height: 240px !important;
-  }
-
-  .meter-area {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-
-  #generatedPass {
-    width: 100%;
-    font-size: 0.9rem;
-  }
-
-  .generator-controls {
+  .row-cards {
     flex-direction: column;
-    gap: 8px;
-  }
-}
-
-/* ✅ SMALLER PHONES */
-@media (max-width: 450px) {
-  .app-container {
-    padding: 0.5rem;
-  }
-  #strengthMeter {
-    width: 200px !important;
-    height: 200px !important;
-  }
-}
-/* ===== CHECKER MOBILE FIX (ADD AT BOTTOM) ===== */
-@media (max-width: 900px) {
-  .app-container {
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  .left-panel, .right-panel {
-    width: 100%;
-    margin: 0;
-    padding: 1rem 0;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-    text-align: center;
-    margin-bottom: 0.8rem;
-  }
-
-  .meter-area canvas {
-    width: 230px !important;
-    height: 230px !important;
-  }
-
-  .card, .generator-card {
-    width: 100%;
-    margin: 0.8rem auto;
   }
 
   .generator-controls {
@@ -305,13 +197,23 @@ h1 {
     width: 100%;
   }
 }
-@media (max-width: 850px) {
+
+/* ✅ SMALL PHONES */
+@media (max-width: 480px) {
   h1 {
-    font-size: 1.6rem;
-    text-align: center;
+    font-size: 1.45rem;
+  }
+
+  .meter-area {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .card, .generator-card {
+    padding: 0.9rem;
+  }
+
+  body {
+    padding-top: 5rem;
   }
 }
-
-
-
-
