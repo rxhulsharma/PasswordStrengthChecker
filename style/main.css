@@ -180,3 +180,9 @@ table {
     width: 100% !important;
   }
 }
+@media (min-width: 1000px) {
+  .app-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
