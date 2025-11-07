@@ -212,3 +212,66 @@ h1 {
 .breach-card, .entropy-card {
   flex: 1;
 }
+/* ✅ Mobile Responsive */
+@media (max-width: 900px) {
+  .app-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .left-panel, .right-panel {
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .meter-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #strengthMeter {
+    width: 260px !important;
+    height: 260px !important;
+  }
+
+  .generator-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #generatedPass {
+    width: 100%;
+  }
+
+  .proceed-btn {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+}
+
+/* ✅ Extra small screens (phones < 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    display: none; /* hide long menu */
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  #strengthMeter {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  input, button {
+    font-size: 0.9rem;
+  }
+}
+
