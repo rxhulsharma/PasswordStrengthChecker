@@ -169,5 +169,13 @@ textarea:-webkit-autofill:focus {
     height: 100px;
   }
 }
+@media (max-width: 850px) {
+  .feedback-card {
+    width: 92%;
+    padding: 1.2rem;
+    margin-top: 1rem;
+  }
+}
+
 
 
