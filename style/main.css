@@ -169,3 +169,14 @@ table {
     word-break: break-word;
   }
 }
+@media (max-width: 800px) {
+  .row-cards {
+    flex-direction: column !important;
+    gap: 1rem;
+  }
+
+  .breach-card,
+  .entropy-card {
+    width: 100% !important;
+  }
+}
