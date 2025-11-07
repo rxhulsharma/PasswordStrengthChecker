@@ -239,4 +239,70 @@ body.loaded{opacity:1}
   gap: 1.4rem;
   padding: 0 2rem 3rem;
 }
+/* ✅ Desktop Fix: Center table & cards again */
+@media (min-width: 901px) {
+  .info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .info-grid {
+    justify-content: center;
+  }
+
+  .table-card {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .incident-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+/* ✅ MOBILE HERO FIX */
+@media (max-width: 750px) {
+  .hero {
+    height: auto;
+    padding: 4rem 1.2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-position: center;
+  }
+
+  .hero::before {
+    background: rgba(0, 10, 25, 0.78); /* darker overlay for mobile readability */
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .hero-content h1 {
+    font-size: 1.9rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    line-height: 1.45;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.7rem;
+    width: 100%;
+  }
+
+  .cta-btn, .learn-btn, .info-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
+
 
