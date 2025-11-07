@@ -99,3 +99,38 @@ body.loaded {
 .warning.show {
   display: inline;
 }
+/* ✅ Global Mobile Responsiveness */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 1rem 1.3rem;
+  }
+
+  .nav-links a {
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+
+  body {
+    padding-top: 70px !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav-links a {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+}
