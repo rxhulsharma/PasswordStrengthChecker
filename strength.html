@@ -14,15 +14,21 @@
 
 <!-- ✅ NAVBAR (No login system) -->
 <nav class="navbar">
-  <div class="logo">🔐 PassCheck</div>
+  <div class="nav-inner">
+    <div class="logo">🔐 PassCheck</div>
 
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="index.html#info">Information</a>
-    <a href="strength.html" class="active">Checker</a>
-    <a href="feedback.html">Feedback</a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-icon" for="menu-toggle">☰</label>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#info">Information</a></li>
+      <li><a href="strength.html">Checker</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
   </div>
 </nav>
+
 
 <!-- ✅ MAIN CHECKER UI - UNCHANGED -->
 <div class="app-container">
