@@ -317,4 +317,19 @@ html {
     line-height: 1.3;
   }
 }
+/* ✅ Fix cards & table cut issues */
+.info-card,
+.incident-card,
+.table-card {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  width: 100%;
+}
+
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
 
