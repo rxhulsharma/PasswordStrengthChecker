@@ -217,3 +217,72 @@ h1 {
     padding-top: 5rem;
   }
 }
+/* ✅ MOBILE FIX FOR STRENGTH CHECKER */
+@media (max-width: 900px) {
+
+  .app-container {
+    flex-direction: column !important;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    padding: 1rem 1rem;
+    margin: 0;
+    border-radius: 15px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+
+  /* ✅ Meter smaller on phone */
+  #strengthMeter {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  .meter-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+
+  /* ✅ Generator + Output */
+  .generator-controls {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  #generatedPass {
+    width: 100%;
+  }
+
+  /* ✅ Put Breach & Crack into Column */
+  .row-cards {
+    flex-direction: column !important;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .breach-card,
+  .entropy-card {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/* ✅ Extra small devices */
+@media (max-width: 450px) {
+  #strengthMeter {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}
+
