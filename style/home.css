@@ -304,5 +304,17 @@ body.loaded{opacity:1}
     padding: 0.8rem;
   }
 }
+/* ✅ FIX: Navbar overlapping hero (mobile only) */
+@media (max-width: 800px) {
+  .home-body {
+    padding-top: 90px !important; /* makes space below navbar */
+  }
+
+  .hero {
+    margin-top: 0 !important;
+    padding-top: 2.5rem !important;
+  }
+}
+
 
 
