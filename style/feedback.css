@@ -130,3 +130,22 @@ textarea:-webkit-autofill:focus {
   margin-top: 120px;
   display: block;
 }
+@media (max-width: 800px) {
+  .feedback-card {
+    width: 95%;
+    padding: 1.4rem;
+  }
+
+  .stars span {
+    font-size: 2.2rem;
+  }
+
+  #name, #feedback {
+    width: 100%;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+}
+
