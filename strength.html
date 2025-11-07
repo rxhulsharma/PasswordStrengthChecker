@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Password Strength Checker | PassCheck</title>
+
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/strength.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="checker-body">
+
+<!-- ✅ NAVBAR (No login system) -->
+<nav class="navbar">
+  <div class="logo">🔐 PassCheck</div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#info">Information</a>
+    <a href="strength.html" class="active">Checker</a>
+    <a href="feedback.html">Feedback</a>
+  </div>
+</nav>
+
+<!-- ✅ MAIN CHECKER UI - UNCHANGED -->
+<div class="app-container">
+  <div class="left-panel">
+
+    <h1>Password Strength Checker</h1>
+
+    <div class="password-section">
+      <label for="passwordInput">Enter Password</label>
+
+      <div class="password-input">
+        <input type="password" id="passwordInput" placeholder="Type your password..." />
+        <button id="toggleBtn">👁</button>
+      </div>
+
+      <div class="strength-row" style="position:relative; height:25px;">
+        <span id="strengthText" style="position:absolute; left:0; font-weight:600;">Strength: Weak</span>
+
+        <span id="warningInline" style="
+          position:absolute;
+          left:50%;
+          transform:translateX(-50%);
+          color:#ffae7f;
+          font-weight:600;
+          display:none;
+        ">
+          ⚠ Please enter a password first.
+        </span>
+      </div>
+
+      <button id="proceedBtn" class="proceed-btn">Proceed →</button>
+    </div>
+
+    <div class="card policy-card">
+      <h3>Password Policy</h3>
+      <ul id="policyList">
+        <li id="lengthRule">❌ At least 8 characters</li>
+        <li id="upperRule">❌ At least 1 uppercase letter</li>
+        <li id="lowerRule">❌ At least 1 lowercase letter</li>
+        <li id="numberRule">❌ At least 1 number</li>
+        <li id="specialRule">❌ At least 1 special character</li>
+      </ul>
+    </div>
+
+    <div class="row-cards">
+      <div class="card breach-card">
+        <h3>Breach Check</h3>
+        <p id="breachResult">—</p>
+      </div>
+
+      <div class="card entropy-card">
+        <h3>Password Entropy & Crack Time</h3>
+        <p id="entropyText">Entropy: 0 bits</p>
+        <p id="crackTime">Estimated crack time: —</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <div class="meter-area">
+      <canvas id="strengthMeter" width="360" height="360"></canvas>
+    </div>
+
+    <div class="tips-card">
+      <h3>💡 Tips to Improve</h3>
+      <p id="tipsText">Start typing to see suggestions...</p>
+    </div>
+
+    <div class="card generator-card">
+      <h3>Generate Strong Password</h3>
+      <div class="generator-controls">
+        <button id="generateBtn">Generate</button>
+        <input type="text" id="generatedPass" readonly />
+        <button id="copyBtn">Copy</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ ORIGINAL SCRIPTS -->
+<script src="scripts/breachCheck.js"></script>
+<script src="scripts/entropyCrack.js"></script>
+<script src="scripts/generator.js"></script>
+<script src="scripts/policy.js"></script>
+<script src="scripts/strength.js"></script>
+<script src="scripts/meterAndTips.js"></script>
+<script src="scripts/main.js"></script>
+
+<script>
+  window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+  });
+</script>
+
+</body>
+</html>

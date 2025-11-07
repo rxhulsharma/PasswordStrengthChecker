@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feedback | PassCheck</title>
+
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/feedback.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="feedback-body">
+
+<!-- ✅ NAVBAR (NO LOGIN) -->
+<nav class="navbar">
+  <div class="logo">🔐 PassCheck</div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#info">Information</a>
+    <a href="strength.html">Checker</a>
+    <a href="feedback.html" class="active">Feedback</a>
+  </div>
+</nav>
+
+<!-- ✅ FEEDBACK FORM -->
+<main class="feedback-container">
+  <div class="feedback-card">
+    <h1>We Value Your Feedback 💬</h1>
+    <p>Tell us what you think — your suggestions help us improve.</p>
+
+    <div class="stars" id="starContainer">
+      <span class="star" data-value="1">★</span>
+      <span class="star" data-value="2">★</span>
+      <span class="star" data-value="3">★</span>
+      <span class="star" data-value="4">★</span>
+      <span class="star" data-value="5">★</span>
+    </div>
+
+    <p id="ratingNote"
+  style="color:#9ecbff;text-align:center;min-height:0px;font-size:1rem;margin:0 0 20px 0;">
+  ⭐ Please rate your experience.
+</p>
+
+
+
+    <form id="feedbackForm">
+      <input type="text" id="name" placeholder="Your name (optional)">
+      <textarea id="feedback" rows="4" placeholder="Your feedback (optional)"></textarea>
+      <button type="submit" class="submit-btn">Submit Feedback</button>
+    </form>
+
+    <p id="statusMsg"
+      style="color:#9ecbff;text-align:center;min-height:20px;font-size:0.9rem;margin:10px 0 0 0;">
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  © 2025 PassCheck | Built for safer digital habits.
+</footer>
+
+<!-- ✅ FEEDBACK SEND SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const stars = document.querySelectorAll(".star");
+  const feedbackForm = document.getElementById("feedbackForm");
+  const feedbackText = document.getElementById("feedback");
+  const nameField = document.getElementById("name");
+  const messageBox = document.getElementById("ratingNote");
+  const statusMsg = document.getElementById("statusMsg");
+  let selectedRating = 0;
+
+  stars.forEach((star, idx) => {
+    star.addEventListener("click", () => {
+      selectedRating = idx + 1;
+      stars.forEach((s, i) => s.classList.toggle("glow", i < selectedRating));
+
+      const msgs = {
+        1:"😞 Sorry! Tell us how we can improve.",
+        2:"😕 Thanks! What could be better?",
+        3:"🙂 Good! Any suggestions?",
+        4:"😊 Great! What did you like?",
+        5:"🤩 Awesome! Thanks for the love!"
+      };
+      messageBox.textContent = msgs[selectedRating] || "";
+    });
+  });
+
+  feedbackForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (!selectedRating) {
+      statusMsg.textContent = "⭐ Please select a rating.";
+      return;
+    }
+
+    if (selectedRating === 1 && feedbackText.value.trim() === "") {
+      statusMsg.textContent = "😞 Feedback required for low rating.";
+      return;
+    }
+
+    statusMsg.textContent = "⏳ Submitting...";
+
+    const payload = {
+      name: nameField.value.trim(),
+      rating: selectedRating,
+      feedback: feedbackText.value.trim()
+    };
+
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbz2Pd_S9rva8Ljfg51_ywLc8BinHDVKEv9saSfont3D30EQpYQU4bT553YVBNBRgwY/exec",
+        {
+          method:"POST",
+          mode:"no-cors",
+          headers:{ "Content-Type": "application/json" },
+          body:JSON.stringify(payload)
+        }
+      );
+
+      statusMsg.textContent = "✅ Feedback submitted!";
+      feedbackForm.reset();
+      stars.forEach(s => s.classList.remove("glow"));
+      selectedRating = 0;
+      messageBox.textContent = "⭐ Please rate your experience.";
+
+    } catch {
+      statusMsg.textContent = "❌ Error submitting feedback.";
+    }
+  });
+});
+</script>
+
+<script>
+  window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+  });
+</script>
+
+</body>
+</html>

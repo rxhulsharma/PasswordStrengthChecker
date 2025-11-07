@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home | PassCheck</title>
+
+  <link rel="stylesheet" href="style/main.css" />
+  <link rel="stylesheet" href="style/home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="home-body">
+
+<!-- ✅ NAVBAR (NO LOGIN) -->
+<nav class="navbar">
+  <div class="logo">🔐 PassCheck</div>
+
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="index.html#info">Information</a>
+    <a href="strength.html">Checker</a>
+    <a href="feedback.html">Feedback</a>
+  </div>
+</nav>
+
+<!-- ✅ HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>Think Your Password Is Safe? Think Again.</h1>
+    <p>Understand password strength, learn best practices, and protect your digital identity from threats.</p>
+
+    <div class="hero-buttons">
+      <button onclick="document.getElementById('info').scrollIntoView({behavior:'smooth'})" class="learn-btn">Learn More</button>
+      <button onclick="window.location.href='strength.html'" class="cta-btn">Start Checking →</button>
+    </div>
+  </div>
+</header>
+
+<!-- ✅ INFORMATION -->
+<section id="info" class="awareness-header">
+  <h2>🔐 Password Awareness Zone</h2>
+</section>
+
+<main class="info-container">
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h2>What is a Password Strength Checker?</h2>
+      <p>A password strength checker evaluates a candidate password and gives feedback...</p>
+      <ul>
+        <li>🔹 <b>Length</b> — longer is stronger (≥12–16 characters)</li>
+        <li>🔹 <b>Character variety</b> — mix uppercase, lowercase, numbers, symbols</li>
+        <li>🔹 <b>Entropy estimate</b></li>
+        <li>🔹 <b>Dictionary & breach checks</b></li>
+        <li>🔹 <b>Pattern detection</b></li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h2>💡 Why We Need a Strong Password</h2>
+      <p>A strong password is your first line of defense...</p>
+      <ul>
+        <li>🔒 Protect personal information</li>
+        <li>🧠 Prevent brute-force attacks</li>
+        <li>💳 Secure sensitive data</li>
+        <li>🕵 Stop identity theft</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h2>🔐 Tips to Create a Strong Password</h2>
+      <ul>
+        <li>✅ Make it long (12–16+ chars)</li>
+        <li>✅ Mix uppercase, lowercase, numbers, symbols</li>
+        <li>🚫 Avoid reused passwords</li>
+        <li>🧠 Use a passphrase</li>
+        <li>🔁 Change after breaches</li>
+        <li>🧩 Use 2FA</li>
+      </ul>
+    </div>
+
+    <div class="info-card table-card">
+      <h2>🧰 Password Strength Examples</h2>
+      <table>
+        <tr><th>Password</th><th>Type</th><th>Crack Time</th></tr>
+        <tr><td>123456</td><td>Weak</td><td>&lt; 1 second</td></tr>
+        <tr><td>Password123!</td><td>Medium</td><td>A few hours</td></tr>
+        <tr><td>dT9$kM4!r8#zWq2L</td><td>Strong</td><td>Trillions of years</td></tr>
+      </table>
+    </div>
+  </div>
+
+ <h2 class="section-title">🔍 Selected Recent Incidents</h2>
+<div class="incident-grid">
+
+  <div class="incident-card">
+    <h3>1. Massive credentials exposed (global)</h3>
+    <p>Researchers uncovered over <b>16 billion login credentials</b> from ~30 datasets, many stolen via “infostealer” malware and cloud leaks.</p>
+    <p><b>Impact:</b> Credential-stuffing attacks rise sharply as reused passwords fuel massive breaches.</p>
+    <p class="source">📰 The Guardian · The Times of India</p>
+  </div>
+
+  <div class="incident-card">
+    <h3>2. Enterprise password hashes cracked</h3>
+    <p>Picus Security found that in <b>46% of environments</b> tested, at least one password hash was cracked — up from 25% last year.</p>
+    <p><b>Takeaway:</b> Detection of credential misuse is now critical for enterprises.</p>
+    <p class="source">📰 GlobeNewswire</p>
+  </div>
+
+  <div class="incident-card">
+    <h3>3. Leak of passwords via infostealer malware</h3>
+    <p>~<b>3.9 billion passwords</b> compromised by malware on 4.3 million devices, stealing saved passwords and browser autofill data.</p>
+    <p><b>Lesson:</b> Protect endpoints, not just servers — local device security matters.</p>
+    <p class="source">📰 eSecurity Planet</p>
+  </div>
+
+  <div class="incident-card">
+    <h3>4. Weak password led to ransomware collapse</h3>
+    <p>A <b>158-year-old UK company</b> collapsed after a weak password triggered ransomware, encrypting backups and shutting operations.</p>
+    <p><b>Lesson:</b> Even legacy firms are vulnerable to simple credential attacks.</p>
+    <p class="source">📰 TwilightCyber</p>
+  </div>
+
+  <div class="incident-card">
+    <h3>5. Social-engineering password resets</h3>
+    <p>Attackers tricked help-desk staff into resetting privileged passwords at <b>M&S</b> and <b>Co-op</b>, bypassing security with impersonation.</p>
+    <p><b>Lesson:</b> Strong process controls are as vital as strong passwords.</p>
+    <p class="source">📰 The Times</p>
+  </div>
+
+  <div class="incident-card">
+    <h3>6. Third-party breach exposed Grubhub credentials</h3>
+    <p>Hashed passwords, names, and partial card data leaked via a vendor account compromise.</p>
+    <p><b>Lesson:</b> Third-party access can expose sensitive login data too.</p>
+    <p class="source">📰 The Verge</p>
+  </div>
+
+</div>
+
+</main>
+
+<footer>
+  © 2025 PassCheck | Built for safer digital habits.
+</footer>
+
+<script>
+  window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+  });
+</script>
+
+</body>
+</html>
