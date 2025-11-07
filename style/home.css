@@ -299,4 +299,34 @@ body {
 
 body.loaded {
   opacity: 1;
+
+}
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+    padding: 3rem 1.6rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero::before {
+    background: rgba(0,8,20,0.85);
+  }
+
+  .hero-content h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .info-grid, .incident-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-container {
+    padding: 3rem 1.4rem;
+  }
 }
