@@ -134,3 +134,35 @@ body.loaded {
     font-size: 0.95rem;
   }
 }
+/* ===== GLOBAL RESPONSIVE FIX ===== */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.navbar {
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem 1.4rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.nav-links a {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Logo smaller on phones */
+@media (max-width: 600px) {
+  .logo {
+    font-size: 1.4rem;
+  }
+}
