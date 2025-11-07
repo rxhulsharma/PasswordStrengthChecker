@@ -221,3 +221,22 @@ footer{
 /* ✅ Smooth fade */
 body{opacity:0;transition:opacity .3s}
 body.loaded{opacity:1}
+.info-card ul,
+.info-card li,
+.incident-card ul,
+.incident-card li {
+  list-style: none !important;
+}
+.table-card table {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+}
+.incident-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.4rem;
+  padding: 0 2rem 3rem;
+}
+
