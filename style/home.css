@@ -1,389 +1,308 @@
-/* --- Dark Cyber Glass Theme (FULLY RESPONSIVE) --- */
+/* === HOME PAGE (FINAL CLEAN RESPONSIVE VERSION) === */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 100px;
 }
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.home-body {
+  background: linear-gradient(135deg, #000814, #001d3d);
+  color: #dce5f7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-.home-body{
-  background:linear-gradient(135deg,#000814,#001d3d);
-  color:#dce5f7;
-  min-height:100vh;
-  overflow-x:hidden;
+/* ✅ NAVBAR (uses same design as other pages) */
+.navbar {
+  width: 100%;
+  background: rgba(15, 25, 45, 0.85);
+  backdrop-filter: blur(15px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  color: #4da6ff;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+.nav-links a {
+  color: #d6e6ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.nav-links a:hover {
+  color: #4da6ff;
+}
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: #4da6ff;
+  cursor: pointer;
+}
+#menu-toggle {
+  display: none;
 }
 
-/* ✅ NAVBAR from main.css (shared across pages) */
-.navbar{
-  width:100%;
-  background:rgba(15,25,45,0.85);
-  backdrop-filter:blur(15px);
-  position:fixed;
-  top:0;left:0;
-  z-index:50;
-  border-bottom:1px solid rgba(255,255,255,0.08);
-  box-shadow:0 4px 25px rgba(0,0,0,0.6);
-}
-.nav-inner{
-  max-width:1200px;
-  margin:auto;
-  padding:1rem 2rem;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.logo{
-  color:#4da6ff;
-  font-size:1.8rem;
-  font-weight:700;
-  white-space:nowrap;
-}
-.nav-links{
-  list-style:none;
-  display:flex;
-  gap:2rem;
-}
-.nav-links a{
-  color:#d6e6ff;
-  text-decoration:none;
-  font-weight:600;
-  font-size:1.05rem;
-}
-.nav-links a:hover{
-  color:#4da6ff;
-}
-.menu-icon{
-  display:none;
-  font-size:2rem;
-  color:#4da6ff;
-  cursor:pointer;
-}
-#menu-toggle{display:none}
-
-/* ✅ Mobile Navbar */
-@media(max-width:820px){
-  .menu-icon{display:block}
-  .nav-links{
-    display:none;
-    position:absolute;
-    top:70px;
-    width:100%;
-    right:0;
-    background:rgba(15,25,45,0.97);
-    backdrop-filter:blur(14px);
-    flex-direction:column;
-    align-items:center;
-    gap:1.4rem;
-    padding:1.5rem 0;
+/* ✅ MOBILE NAVBAR */
+@media (max-width: 820px) {
+  .menu-icon {
+    display: block;
   }
-  #menu-toggle:checked ~ .nav-links{
-    display:flex;
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    right: 0;
+    background: rgba(15, 25, 45, 0.97);
+    backdrop-filter: blur(15px);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.3rem 0;
+  }
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
   }
 }
 
 /* ✅ HERO */
-.hero{
-  height:70vh;
-  background:url('https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?auto=format&fit=crop&w=1600&q=80')
+.hero {
+  height: 85vh;
+  background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?auto=format&fit=crop&w=1600&q=80')
     center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  padding:0 6rem;
-  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 6rem;
+  position: relative;
+  margin-top: 80px;
 }
-.hero::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,rgba(0,10,25,0.95) 40%,rgba(0,10,25,0.5) 70%,transparent);
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 10, 25, 0.95) 40%, rgba(0, 10, 25, 0.5) 70%, transparent);
 }
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:500px;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
 }
-.hero-content h1{
-  font-size:2.8rem;
-  font-weight:700;
-  color:white;
-  margin-bottom:1rem;
+.hero-content h1 {
+  font-size: 2.8rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
-.hero-content p{
-  font-size:1.1rem;
-  line-height:1.5;
-  color:#cfe6ff;
-  margin-bottom:1.7rem;
+.hero-content p {
+  font-size: 1.15rem;
+  color: #cfe6ff;
+  margin-bottom: 2rem;
 }
-.hero-buttons{
-  display:flex;
-  gap:1rem;
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
 }
-.cta-btn,.learn-btn{
-  border-radius:10px;
-  padding:0.9rem 2rem;
-  cursor:pointer;
-  font-size:1.1rem;
-  transition:.3s;
+.cta-btn,
+.learn-btn {
+  border-radius: 10px;
+  padding: 0.9rem 2rem;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.cta-btn{
-  background:linear-gradient(90deg,#007bff,#1e90ff);
-  color:white;
+.cta-btn {
+  background: linear-gradient(90deg, #007bff, #1e90ff);
+  color: white;
 }
-.learn-btn{
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(77,166,255,0.4);
-  color:#9ecbff;
+.learn-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(77, 166, 255, 0.4);
+  color: #9ecbff;
 }
 
 /* ✅ HERO MOBILE FIX */
-@media(max-width:850px){
-  .hero{padding:0 1.2rem;justify-content:center;text-align:center;height:65vh;}
-  .hero-content h1{font-size:2rem}
-  .hero-buttons{flex-direction:column;align-items:center}
-}
-
-/* ✅ SECTION TITLES */
-.awareness-header,
-.section-title{
-  text-align:center;
-  color:#4da6ff;
-  font-size:2.2rem;
-  font-weight:700;
-  margin:4rem 0 1rem;
-}
-@media(max-width:850px){
-  .awareness-header,
-  .section-title{font-size:1.7rem;}
-}
-
-/* ✅ INFO CARDS */
-.info-container{
-  padding:5rem 8% 3rem;
-  display:flex;
-  flex-direction:column;
-  gap:2.5rem;
-}
-.info-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:1.5rem;
-}
-.info-card{
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(18px);
-  padding:1.7rem 1.9rem;
-  border-radius:15px;
-  box-shadow:0 0 20px rgba(0,0,0,0.6);
-  transition:.25s;
-}
-.info-card:hover{transform:translateY(-3px)}
-.info-card h2{font-size:1.5rem;color:#4da6ff;margin-bottom:.7rem}
-.info-card p,
-.info-card li{font-size:1rem;line-height:1.5}
-
-/* ✅ TABLE RESPONSIVE */
-.table-card table{
-  width:100%;
-  border-collapse:collapse;
-  display:block;
-  overflow-x:auto;
-}
-.table-card th,.table-card td{
-  padding:.7rem;
-  border:1px solid rgba(255,255,255,0.1);
-  text-align:center;
-}
-
-/* ✅ INCIDENTS GRID */
-.incident-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:1.4rem;
-  padding:0 1.5rem 3rem;
-}
-.incident-card{
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(20px);
-  border-radius:15px;
-  padding:1.4rem;
-}
-.incident-card h3{font-size:1.15rem;color:#74c0ff}
-.incident-card p{font-size:.95rem;line-height:1.5}
-
-/* ✅ FOOTER */
-footer{
-  text-align:center;
-  padding:1.5rem;
-  background:#0b1a2d;
-  color:#9ecbff;
-  margin-top:2rem;
-}
-
-/* ✅ Smooth fade */
-body{opacity:0;transition:opacity .3s}
-body.loaded{opacity:1}
-.info-card ul,
-.info-card li,
-.incident-card ul,
-.incident-card li {
-  list-style: none !important;
-}
-.table-card table {
-  margin: auto;
-  text-align: center;
-  width: 100%;
-  max-width: 800px;
-}
-.incident-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.4rem;
-  padding: 0 2rem 3rem;
-}
-/* ✅ Desktop Fix: Center table & cards again */
-@media (min-width: 901px) {
-  .info-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .info-grid {
-    justify-content: center;
-  }
-
-  .table-card {
-    max-width: 750px;
-    margin: 0 auto;
-  }
-
-  .incident-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-}
-/* ✅ MOBILE HERO FIX */
-@media (max-width: 750px) {
+@media (max-width: 850px) {
   .hero {
-    height: auto;
-    padding: 4rem 1.2rem;
-    display: flex;
-    justify-content: center;
+    padding: 1.5rem;
     text-align: center;
-    background-position: center;
+    justify-content: center;
+    height: auto;
   }
-
   .hero::before {
-    background: rgba(0, 10, 25, 0.78); /* darker overlay for mobile readability */
+    background: rgba(0, 10, 25, 0.85);
   }
-
   .hero-content {
     max-width: 100%;
-    padding: 0;
   }
-
   .hero-content h1 {
-    font-size: 1.9rem;
+    font-size: 2rem;
     line-height: 1.3;
-    margin-bottom: 0.8rem;
   }
-
   .hero-content p {
     font-size: 1rem;
-    line-height: 1.45;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 0.7rem;
-    width: 100%;
-  }
-
-  .cta-btn, .learn-btn, .info-btn {
-    width: 100%;
-    font-size: 1rem;
-    padding: 0.8rem;
-  }
-}
-/* ✅ FIX: Navbar overlapping hero (mobile only) */
-@media (max-width: 800px) {
-  .home-body {
-    padding-top: 90px !important; /* makes space below navbar */
-  }
-
-  .hero {
-    margin-top: 0 !important;
-    padding-top: 2.5rem !important;
-  }
-}
-/* ✅ HERO FIX (Mobile) */
-@media (max-width: 800px) {
-  .home-body {
-    padding-top: 90px !important; /* Creates space below navbar */
-    overflow-x: hidden;
-  }
-
-  .hero {
-    padding: 1rem 1.2rem !important;
-    height: auto !important;
-    min-height: 65vh;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .hero-content {
-    max-width: 100% !important;
-  }
-
-  .hero-content h1 {
-    font-size: 1.9rem !important;
-    line-height: 1.3;
-    text-align: center;
-  }
-
-  .hero-content p {
-    font-size: 1rem !important;
     line-height: 1.5;
   }
-
   .hero-buttons {
     flex-direction: column;
     align-items: center;
-    gap: 0.6rem;
     width: 100%;
+  }
+  .cta-btn,
+  .learn-btn {
+    width: 100%;
+    font-size: 1rem;
   }
 }
 
-/* ✅ PC FIX – Cards should be full widescreen, not narrowed */
+/* ✅ SECTION HEADINGS */
+.awareness-header,
+.section-title {
+  text-align: center;
+  color: #4da6ff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 4rem 0 1rem;
+}
+
+/* ✅ INFO SECTION */
 .info-container {
-  max-width: 1350px;
+  max-width: 1300px;
   margin: auto;
+  padding: 4rem 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
-
-/* ✅ PC FIX – Article cards same wide layout as before */
 .info-grid {
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)) !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
 }
-
-/* ✅ Table centered on desktop */
-.table-card table {
-  margin: auto;
+.info-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.6);
 }
-
-/* ✅ Remove bullets (you complained about bullets) */
+.info-card h2 {
+  font-size: 1.6rem;
+  color: #4da6ff;
+  margin-bottom: 0.8rem;
+}
+.info-card p,
+.info-card li {
+  font-size: 1.05rem;
+  color: #dbe9ff;
+  line-height: 1.6;
+}
 .info-card ul,
 .info-card li {
   list-style: none !important;
-  padding-left: 0;
 }
 
-/* ✅ Incident cards full width on desktop like original */
-.incident-grid {
-  max-width: 1350px;
+/* ✅ TABLE CENTER FIX */
+.table-card table {
+  width: 100%;
+  max-width: 800px;
   margin: auto;
-  padding: 0 3rem 3rem;
+  border-collapse: collapse;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.table-card th,
+.table-card td {
+  padding: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+.table-card th {
+  color: #4da6ff;
 }
 
+/* ✅ INCIDENT GRID */
+.section-title {
+  text-align: center;
+  color: #4da6ff;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+.incident-grid {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  padding: 0 2rem 3rem;
+}
+.incident-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+.incident-card h3 {
+  color: #74c0ff;
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+.incident-card p {
+  font-size: 1rem;
+  color: #dbe9ff;
+  line-height: 1.6;
+}
+.incident-card .source {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #9ecbff;
+}
 
+/* ✅ FOOTER */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #0b1a2d;
+  color: #9ecbff;
+}
 
-
+/* ✅ RESPONSIVE FIXES */
+@media (max-width: 1100px) {
+  .incident-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .incident-grid {
+    grid-template-columns: 1fr;
+  }
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  .info-container {
+    padding: 2rem 1.2rem;
+  }
+}
